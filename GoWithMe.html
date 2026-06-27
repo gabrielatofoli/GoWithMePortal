@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoWithMe - Portal de Viagens</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fs-4" href="#">
+                <i class="bi bi-hexagon-fill me-2"></i>GoWithMe
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto gap-2">
+                    <li class="nav-item"><a class="nav-link fw-medium text-dark" href="#">Início</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium text-muted" href="#destinos">Destinos</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium text-muted" href="#categorias">Categorias</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium text-muted" href="#roteiro">Roteiros</a></li>
+                </ul>
+
+                <button class="btn btn-primary-bee shadow-sm mt-2 mt-lg-0" data-bs-toggle="modal"
+                    data-bs-target="#modalRoteiro">
+                    Solicitar roteiro
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container my-5 py-4">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 text-center text-lg-start">
+                <h1 class="display-4 fw-bold lh-base mb-3">
+                    Descubra destinos <br>
+                    <span class="text-primary-bee">incríveis</span> pelo <br>
+                    mundo
+                </h1>
+
+                <p class="text-muted mb-4 pe-lg-5">
+                    Encontre informações sobre países, cidades, pontos turísticos, cultura local e ideias de roteiros
+                    para planejar melhor a sua próxima viagem.
+                </p>
+
+                <div class="search-floating-box p-3 mt-4">
+                    <form id="formPesquisa" class="m-0">
+                        <div class="search-input-wrapper">
+                            <div class="search-line flex-grow-1 w-100">
+                                <i class="bi bi-search"></i>
+                                <input type="text" id="inputPesquisa" placeholder="Comece sua pesquisa" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary-bee px-4">
+                                Pesquisar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-6 hero-mosaic d-none d-lg-block">
+                <div class="row g-3 align-items-center">
+                    <div class="col-6">
+                        <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=400&h=500&q=80"
+                            alt="Grécia" class="mb-3">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&h=300&q=80"
+                            alt="Praia tropical">
+                    </div>
+                    <div class="col-6">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=400&h=320&q=80"
+                            alt="Estrada de viagem" class="mb-3">
+                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&h=450&q=80"
+                            alt="Japão">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="categorias" class="container my-5 py-4">
+        <div class="mb-4 text-center text-md-start">
+            <h2 class="h4 fw-bold m-0">Categorias</h2>
+            <p class="text-muted small">Explore destinos por estilo de viagem</p>
+        </div>
+
+        <div class="row g-3 justify-content-center justify-content-md-start">
+            <div class="col-4 col-sm-3 col-md-2 category-oval-wrapper">
+                <img src="https://images.unsplash.com/photo-1539650116574-8efeb43e2750?auto=format&fit=crop&w=150&h=250&q=80"
+                    class="category-oval-img shadow-sm" alt="História">
+                <p class="small fw-medium mt-2 mb-0">História</p>
+            </div>
+
+            <div class="col-4 col-sm-3 col-md-2 category-oval-wrapper">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=150&h=250&q=80"
+                    class="category-oval-img shadow-sm" alt="Montanhas">
+                <p class="small fw-medium mt-2 mb-0">Montanhas</p>
+            </div>
+
+            <div class="col-4 col-sm-3 col-md-2 category-oval-wrapper">
+                <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=150&h=250&q=80"
+                    class="category-oval-img shadow-sm" alt="Arquitetura">
+                <p class="small fw-medium mt-2 mb-0">Arquitetura</p>
+            </div>
+
+            <div class="col-4 col-sm-3 col-md-2 category-oval-wrapper">
+                <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=150&h=250&q=80"
+                    class="category-oval-img shadow-sm" alt="Natureza">
+                <p class="small fw-medium mt-2 mb-0">Natureza</p>
+            </div>
+
+            <div class="col-4 col-sm-3 col-md-2 category-oval-wrapper">
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=150&h=250&q=80"
+                    class="category-oval-img shadow-sm" alt="Cidades">
+                <p class="small fw-medium mt-2 mb-0">Cidades</p>
+            </div>
+
+            <div class="col-4 col-sm-3 col-md-2 category-oval-wrapper">
+                <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=150&h=250&q=80"
+                    class="category-oval-img shadow-sm" alt="Praias">
+                <p class="small fw-medium mt-2 mb-0">Praias</p>
+            </div>
+        </div>
+    </section>
+
+    <main id="destinos" class="container my-5">
+        <div class="mb-4 text-center text-md-start">
+            <h2 class="h4 fw-bold m-0">Destinos em Destaque</h2>
+            <p class="text-muted small mb-0">Conheça lugares, culturas e pontos turísticos para se inspirar</p>
+        </div>
+
+        <div class="row align-items-start g-4">
+            <section class="col-lg-8">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card card-bee h-100">
+                            <img src="./img/Nova York.jpg" class="card-img-top" alt="Nova York">
+                            <div class="card-body p-4 d-flex flex-column">
+                                <h3 class="h5 fw-bold card-title">Nova York</h3>
+                                <p class="card-text text-muted small flex-grow-1">A cidade que nunca dorme, cheia de
+                                    cultura, comércio e vida noturna agitada.</p>
+                                <a href="#"
+                                    class="btn btn-outline-primary btn-sm rounded-pill px-3 align-self-start mt-3">Conhecer
+                                    destino</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card card-bee h-100">
+                            <img src="./img/Alpes.jpg" class="card-img-top" alt="Alpes Suíços">
+                            <div class="card-body p-4 d-flex flex-column">
+                                <h3 class="h5 fw-bold card-title">Alpes Suíços</h3>
+                                <p class="card-text text-muted small flex-grow-1">Uma região perfeita para explorar
+                                    vilarejos, lagos, montanhas e paisagens de inverno.</p>
+                                <a href="#"
+                                    class="btn btn-outline-primary btn-sm rounded-pill px-3 align-self-start mt-3">Conhecer
+                                    destino</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card card-bee h-100">
+                            <img src="./img/Machu.jpg" class="card-img-top" alt="Machu Picchu">
+                            <div class="card-body p-4 d-flex flex-column">
+                                <h3 class="h5 fw-bold card-title">Machu Picchu</h3>
+                                <p class="card-text text-muted small flex-grow-1">Um dos lugares mais fascinantes do
+                                    Peru, cheio de história, natureza e cultura Inca.</p>
+                                <a href="#"
+                                    class="btn btn-outline-primary btn-sm rounded-pill px-3 align-self-start mt-3">Conhecer
+                                    destino</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card card-bee h-100">
+                            <img src="./img/Santorini.jpg" class="card-img-top" alt="Santorini">
+                            <div class="card-body p-4 d-flex flex-column">
+                                <h3 class="h5 fw-bold card-title">Santorini</h3>
+                                <p class="card-text text-muted small flex-grow-1">Ilha grega famosa por suas paisagens
+                                    deslumbrantes, casas brancas e pôr do sol magnífico.</p>
+                                <a href="#"
+                                    class="btn btn-outline-primary btn-sm rounded-pill px-3 align-self-start mt-3">Conhecer
+                                    destino</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <aside id="roteiro" class="col-lg-4 d-flex flex-column">
+                <div class="guide-card p-4 mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-map fs-3 me-2"></i>
+                        <h4 class="h5 fw-bold mb-0">Criamos um roteiro para você</h4>
+                    </div>
+
+                    <p class="small opacity-75 mb-3">
+                        Conte seu destino, estilo de viagem e tempo disponível. A GoWithMe te ajuda a montar uma base
+                        de roteiro para explorar melhor o lugar.
+                    </p>
+
+                    <button class="btn btn-light w-100 fw-bold text-primary-bee" data-bs-toggle="modal"
+                        data-bs-target="#modalRoteiro">
+                        Solicitar roteiro
+                    </button>
+                </div>
+
+                <div class="card-bee p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div>
+                            <h4 class="h5 fw-bold mb-1">Feedback dos roteiros criados</h4>
+                            <p class="text-muted small mb-0">Veja como os roteiros ajudaram outros viajantes</p>
+                        </div>
+                        <i class="bi bi-chat-heart-fill fs-3 text-primary-bee"></i>
+                    </div>
+
+                    <div class="d-flex align-items-start gap-3 py-3 border-bottom">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&h=80&q=80"
+                            alt="Foto da usuária Ana Martins" class="rounded-circle flex-shrink-0 feedback-avatar">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-1">
+                                <h5 class="small fw-bold mb-0">Ana Martins</h5>
+                                <span class="text-warning small text-nowrap">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i>
+                                </span>
+                            </div>
+                            <p class="small text-muted mb-0">O roteiro me ajudou a organizar os pontos turísticos por
+                                região. Economizei tempo e consegui aproveitar melhor a viagem.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-start gap-3 py-3 border-bottom">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&h=80&q=80"
+                            alt="Foto do usuário Lucas Ribeiro" class="rounded-circle flex-shrink-0 feedback-avatar">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-1">
+                                <h5 class="small fw-bold mb-0">Lucas Ribeiro</h5>
+                                <span class="text-warning small text-nowrap">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-half"></i>
+                                </span>
+                            </div>
+                            <p class="small text-muted mb-0">Gostei porque o roteiro trouxe uma base simples, com
+                                sugestões de lugares e uma ordem lógica para visitar.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-start gap-3 pt-3">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=80&h=80&q=80"
+                            alt="Foto da usuária Beatriz Lima" class="rounded-circle flex-shrink-0 feedback-avatar">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-1">
+                                <h5 class="small fw-bold mb-0">Beatriz Lima</h5>
+                                <span class="text-warning small text-nowrap">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i>
+                                </span>
+                            </div>
+                            <p class="small text-muted mb-0">Usei como ponto de partida para montar minha viagem. Ficou
+                                bem mais fácil entender o que valia a pena conhecer.</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <div class="modal fade" id="modalRoteiro" tabindex="-1" aria-labelledby="modalRoteiroLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="modalRoteiroLabel">Solicitar roteiro personalizado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+
+                <div class="modal-body p-4">
+                    <p class="text-muted small mb-4">
+                        Preencha as informações principais para criarmos uma base de roteiro conforme seu estilo de
+                        viagem.
+                    </p>
+
+                    <form id="formRoteiro">
+                        <div class="mb-3">
+                            <label for="inputNome" class="form-label small fw-medium">Nome</label>
+                            <input type="text" class="form-control" id="inputNome" placeholder="Ex: Maria Santos"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label small fw-medium">E-mail</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="nome@email.com"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="inputDestino" class="form-label small fw-medium">Destino de interesse</label>
+                            <input type="text" class="form-control" id="inputDestino"
+                                placeholder="Ex: Paris, Japão, Chile..." required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="inputEstilo" class="form-label small fw-medium">Estilo de viagem</label>
+                            <select class="form-select" id="inputEstilo" required>
+                                <option value="" selected disabled>Selecione uma opção</option>
+                                <option>Cultural e histórico</option>
+                                <option>Natureza e aventura</option>
+                                <option>Praia e descanso</option>
+                                <option>Gastronomia</option>
+                                <option>Econômico</option>
+                            </select>
+                        </div>
+
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-primary-bee">Enviar solicitação</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <!-- Logo -->
+                <div class="col-lg-4">
+                    <h4 class="fw-bold mb-3">
+                        <i class="bi bi-hexagon-fill text-primary-bee me-2"></i>
+                        GoWithMe
+                    </h4>
+
+                    <p class="text-light-emphasis mb-0">
+                        Explore destinos, descubra culturas e encontre inspiração
+                        para sua próxima viagem com a GoWithMe.
+                    </p>
+                </div>
+
+                <!-- Links úteis -->
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="fw-bold mb-3">Explorar</h6>
+
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#destinos" class="text-decoration-none text-light-emphasis">
+                                Destinos
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="#categorias" class="text-decoration-none text-light-emphasis">
+                                Categorias
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="#roteiro" class="text-decoration-none text-light-emphasis">
+                                Roteiros
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Suporte -->
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="fw-bold mb-3">Suporte</h6>
+
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-light-emphasis">
+                                Contato
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-light-emphasis">
+                                Perguntas frequentes
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-light-emphasis">
+                                Política de Privacidade
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Redes sociais -->
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-3">Acompanhe a GoWithMe</h6>
+
+                    <div class="d-flex gap-3 fs-4">
+
+                        <a href="#" class="text-white">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="#" class="text-white">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <a href="#" class="text-white">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+
+                        <a href="#" class="text-white">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="border-secondary my-4">
+
+            <div class="text-center text-light-emphasis small">
+                © 2026 GoWithMe. Todos os direitos reservados.
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('formPesquisa').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const termo = document.getElementById('inputPesquisa').value.trim();
+
+            if (termo) {
+                alert(`Pesquisa realizada por: ${termo}`);
+                this.reset();
+            }
+        });
+
+        document.getElementById('formRoteiro').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('inputNome').value.trim();
+            const destino = document.getElementById('inputDestino').value.trim();
+
+            alert(`Obrigada, ${nome}! Recebemos sua solicitação de roteiro para ${destino}.`);
+
+            const modalElement = document.getElementById('modalRoteiro');
+            const modalInstance = bootstrap.Modal.getInstance(modalElement);
+            modalInstance.hide();
+
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
