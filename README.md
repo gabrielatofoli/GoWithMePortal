@@ -55,7 +55,6 @@ GoWithMePortal/
 │
 ├── index.html
 ├── css/
-├── js/
 ├── img/
 └── README.md
 ```
